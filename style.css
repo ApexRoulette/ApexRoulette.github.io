@@ -1,0 +1,598 @@
+#backgroundImage {
+  height: 105%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+#legend {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+
+  margin-left: calc(50% - 500px);
+  margin-top: 50px;
+  position: absolute;
+}
+#legendShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: -50px;
+  position: absolute;
+}
+#toggleLegend {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 57px;
+  z-index: 2;
+}
+#randomizeLegend {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 57px;
+  z-index: 2;
+}
+#randomizeLegend:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeLegend:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#legendDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 17px;
+  z-index: 2;
+}
+#legendToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 17px;
+  z-index: 2;
+}
+
+#armor {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+  margin-left: calc(50% - 500px);
+  margin-top: 200px;
+  position: absolute;
+}
+#armorShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: 100px;
+  position: absolute;
+}
+#toggleArmor {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 207px;
+  z-index: 2;
+}
+#randomizeArmor {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 207px;
+  z-index: 2;
+}
+#randomizeArmor:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeArmor:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#armorDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 167px;
+  z-index: 2;
+}
+#armorToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 167px;
+  z-index: 2;
+}
+
+#meds {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 40px;
+  color: #CCCCCC;
+  padding-top: 25px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+  margin-left: calc(50% - 500px);
+  margin-top: 350px;
+  position: absolute;
+}
+#medsShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: 250px;
+  position: absolute;
+}
+#toggleMeds {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 357px;
+  z-index: 2;
+}
+#randomizeMeds {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 357px;
+  z-index: 2;
+}
+#randomizeMeds:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeMeds:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#medsDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 317px;
+  z-index: 2;
+}
+#medsToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 317px;
+  z-index: 2;
+}
+
+#team {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 20px;
+  color: #CCCCCC;
+  padding-top: 35px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+  margin-left: calc(50% - 500px);
+  margin-top: 500px;
+  position: absolute;
+}
+#teamShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: 400px;
+  position: absolute;
+}
+#toggleTeam {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 507px;
+  z-index: 2;
+}
+#randomizeTeam {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 507px;
+  z-index: 2;
+}
+#randomizeTeam:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeTeam:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#teamDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 467px;
+  z-index: 2;
+}
+#teamToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 467px;
+  z-index: 2;
+}
+
+#legendRule {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 20px;
+  color: #CCCCCC;
+  padding-top: 35px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+  margin-left: calc(50% - 500px);
+  margin-top: 650px;
+  position: absolute;
+}
+#legendRuleShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: 550px;
+  position: absolute;
+}
+#toggleLegendRule {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 657px;
+  z-index: 2;
+}
+#randomizeLegendRule {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 657px;
+  z-index: 2;
+}
+#randomizeLegendRule:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeLegendRule:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#legendRuleDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 617px;
+  z-index: 2;
+}
+#legendRuleToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 617px;
+  z-index: 2;
+}
+
+#special {
+  z-index: 3;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 20px;
+  color: #CCCCCC;
+  padding-top: 35px;
+
+  background-image: url("images/text/textbackground.png");
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 100px;
+  margin-left: calc(50% - 500px);
+  margin-top: 800px;
+  position: absolute;
+}
+#toggleSpecial {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/disable/enabled.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 807px;
+  z-index: 2;
+}
+#specialShadow {
+  z-index: 2;
+  text-align: center;
+  font-family: Aldrich;
+  font-size: 64px;
+  color: #CCCCCC;
+  padding-top: 12px;
+
+  background-image: url("images/text/text_shadow.png");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 300px;
+
+  margin-left: calc(50% - 600px);
+  margin-top: 700px;
+  position: absolute;
+}
+#randomizeSpecial {
+  width: 154px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("images/dice/dice.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 500px);
+  top: 807px;
+  z-index: 2;
+}
+#randomizeSpecial:hover {
+  background-image: url("images/dice/dice_hover.png");
+}
+#randomizeSpecial:active {
+  background-image: url("images/dice/dice_active.png");
+}
+#specialDiceShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% + 485px);
+  top: 767px;
+  z-index: 2;
+}
+#specialToggleShadow {
+  width: 185px;
+  height: 137px;
+  background-color: transparent;
+  background-image: url("images/dice/dice_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: calc(50% - 655px);
+  top: 767px;
+  z-index: 2;
+}
+
+#generate {
+  font-family: Aldrich;
+  font-size: 64;
+  color: #CCCCCC;
+
+  width: 249px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("generate.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  margin-left: calc(50% - 125px);
+  margin-top: 950px;
+  z-index: 2;
+}
+#generate:hover {
+  background-image: url("generate_hover.png");
+}
+#generate:active {
+  background-image: url("generate_active.png");
+}
+#generateShadow {
+  width: 289px;
+  height: 135px;
+  background-color: transparent;
+  background-image: url("generate_shadow.png");
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  margin-left: calc(50% - 148px);
+  margin-top: 932px;
+  z-index: 2;
+}
