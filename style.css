@@ -568,7 +568,7 @@
   width: 249px;
   height: 100px;
   background-color: transparent;
-  background-image: url("generate.png");
+  background-image: url("images/gen/generate.png");
   background-repeat: no-repeat;
   border: none;
   outline: none;
@@ -578,16 +578,16 @@
   z-index: 2;
 }
 #generate:hover {
-  background-image: url("generate_hover.png");
+  background-image: url("images/gen/generate_hover.png");
 }
 #generate:active {
-  background-image: url("generate_active.png");
+  background-image: url("images/gen/generate_active.png");
 }
 #generateShadow {
   width: 289px;
   height: 135px;
   background-color: transparent;
-  background-image: url("generate_shadow.png");
+  background-image: url("images/gen/generate_shadow.png");
   background-repeat: no-repeat;
   border: none;
   outline: none;
