@@ -285,14 +285,14 @@ function revertTeam() {
   document.getElementById("team").style.paddingTop = 35;
 }
 function randomizeTeam() {
-  let max = 14;
+  let max = 16;
   let rule;
   switch(Math.floor(Math.random() * max)) {
     case 0:
       rule = "Life or Death - No reviving downed players without a Respawn Beacon";
       break;
     case 1:
-      rule = "Lone Wolf - Land far away from one another and do not meet up";
+      rule = "Lone Wolf - Land far away from one another and do not meet up before the first ring closes";
       break;
     case 2:
       rule = "Together, Ape Strong - No splitting up, not even to loot";
@@ -301,7 +301,7 @@ function randomizeTeam() {
       rule = "Glory For All - Team must charge into all combat without retreat";
       break;
     case 4:
-      rule = "Boxing Match - Team must select one player to punch someone to death, if they fail another is selected";
+      rule = "Boxing Match - If your team finds a downed enemy, they must all punch them to death";
       break;
     case 5:
       rule = "Looter - You are the only person allowed to loot on your team";
@@ -310,7 +310,7 @@ function randomizeTeam() {
       rule = "Combo - Whole team must use tacticals or ults at the same time";
       break;
     case 7:
-      rule = "Synergy - All players must have the same guns, do not leave the place you landed without doing so";
+      rule = "Synergy - All players must have one of the same gun";
       break
     case 8:
       rule = "Special Coms - One player talks with pings, one with text, and one with voice chat";
@@ -329,6 +329,12 @@ function randomizeTeam() {
       break;
     case 13:
       rule = "Simon Says - Team members must do anything the other team members tell them";
+      break;
+    case 14:
+      rule = "Hot Swap - You can only use loadouts that one of your other teammates would use";
+      break;
+    case 15:
+      rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
       break;
   }
 
@@ -648,7 +654,7 @@ function randomizeMirage() {
       rule = "Season 1 - You cannot control your decoys";
       break;
     case 2:
-      rule = "Show Off - You can only ult when doing a finisher, in which case you must ult";
+      rule = "Show Off - If it's up, you must use your ult to finish all downed enemies";
       break;
     case 3:
       rule = "Decoy Dance - You must land at Mirage Voyage and pretend to be a decoy";
