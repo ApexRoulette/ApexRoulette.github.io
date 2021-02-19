@@ -20,7 +20,7 @@ var cryptoEnabled = true;
 var revenantEnabled = true;
 var lobaEnabled = true;
 
-var mapID = 0;
+var mapID = 1;
 
 function toggleLegend() {
   if (legendEnabled) {
@@ -191,6 +191,58 @@ function randomizeArmor() {
         armor = "Labs";
         break;
   }
+} else if (mapID == 1) {
+  let max = 16;
+  switch(Math.floor(Math.random() * max)) {
+    case 0:
+      armor = "Docks";
+      break;
+    case 1:
+      armor = "Carrier";
+      break;
+    case 2:
+      armor = "Oasis";
+      break;
+    case 3:
+      armor = "Estates";
+      break;
+    case 4:
+      armor = "Elysium";
+      break;
+    case 5:
+      armor = "Hydroponics";
+      break;
+    case 6:
+      armor = "Hammond Labs";
+      break;
+    case 7:
+      armor = "Grow Towers";
+      break;
+    case 8:
+      armor = "Gardens";
+      break;
+    case 9:
+      armor = "Bonsai Plaza";
+      break;
+    case 10:
+      armor = "Power Grid";
+      break;
+    case 11:
+      armor = "Rift";
+      break;
+    case 12:
+      armor = "Orbital Cannot";
+      break;
+    case 13:
+      armor = "Solar Array";
+      break;
+    case 14:
+      armor = "Turbine";
+      break;
+    case 15:
+      armor = "Energy Depot";
+      break;
+    }
 }
 
   currentArmor = armor;
