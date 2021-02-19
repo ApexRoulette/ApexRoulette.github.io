@@ -20,6 +20,8 @@ var cryptoEnabled = true;
 var revenantEnabled = true;
 var lobaEnabled = true;
 
+var mapID = 0;
+
 function toggleLegend() {
   if (legendEnabled) {
     document.getElementById("toggleLegend").style.backgroundImage = "url('images/disable/disabled.png')";
@@ -111,7 +113,7 @@ function toggleArmor() {
   }
 }
 function showArmor() {
-  document.getElementById("armor").innerHTML = "ARMOR";
+  document.getElementById("armor").innerHTML = "LOCATION";
   document.getElementById("armor").style.color = "yellow";
 }
 function revertArmor() {
@@ -122,57 +124,74 @@ function revertArmor() {
 }
 function randomizeArmor() {
   let armor;
-  let max = 16;
-  switch(Math.floor(Math.random() * max)) {
-    case 0:
-      armor = "White";
-      break;
-    case 1:
-      armor = "Blue";
-      break;
-    case 2:
-      armor = "Purple";
-      break;
-    case 3:
-      armor = "Gold";
-      break;
-    case 4:
-      armor = "Evo";
-      break;
-    case 5:
-      armor = "White or Gold";
-      break;
-    case 6:
-      armor = "Purple or Evo";
-      break;
-    case 7:
-      armor = "White or Blue";
-      break;
-    case 8:
-      armor = "Blue or Purple";
-      break;
-    case 9:
-      armor = "Purple or Gold";
-      break;
-    case 10:
-      armor = "Blue or Gold";
-      break;
-    case 11:
-      armor = "Blue or Evo";
-      break;
-    case 12:
-      armor = "White or Evo";
-      break;
-    case 13:
-      armor = "Gold or Evo";
-      break;
-    case 14:
-      armor = "White and Purple";
-      break;
-    case 15:
-      armor = "None";
-      break;
+  if (mapID == 0) {
+    let max = 21;
+    switch(Math.floor(Math.random() * max)) {
+      case 0:
+        armor = "Crash Site";
+        break;
+      case 1:
+        armor = "Artillery";
+        break;
+      case 2:
+        armor = "Spotted Lake";
+        break;
+      case 3:
+        armor = "Runoff";
+        break;
+      case 4:
+        armor = "Airbase";
+        break;
+      case 5:
+        armor = "The Pit";
+        break;
+      case 6:
+        armor = "Gauntlet";
+        break;
+      case 7:
+        armor = "Mirage Voyage";
+        break;
+      case 8:
+        armor = "Salvage";
+        break;
+      case 9:
+        armor = "Water Treatment";
+        break;
+      case 10:
+        armor = "Market";
+        break;
+      case 11:
+        armor = "Repulsor";
+        break;
+      case 12:
+        armor = "Swamps";
+        break;
+      case 13:
+        armor = "Containement";
+        break;
+      case 14:
+        armor = "Capacitor";
+        break;
+      case 15:
+        armor = "Broken Relay";
+        break;
+      case 16:
+        armor = "The Rig";
+        break;
+      case 17:
+        armor = "Bunker";
+        break;
+      case 18:
+        armor = "Hydro Dam";
+        break;
+      case 19:
+        armor = "The Cage";
+        break;
+      case 20:
+        armor = "Labs";
+        break;
   }
+}
 
   currentArmor = armor;
   return armor;
