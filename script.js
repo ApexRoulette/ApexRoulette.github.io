@@ -231,7 +231,7 @@ function randomizeArmor() {
       armor = "Rift";
       break;
     case 12:
-      armor = "Orbital Cannot";
+      armor = "Orbital Cannon";
       break;
     case 13:
       armor = "Solar Array";
