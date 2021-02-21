@@ -106,10 +106,10 @@ function changeLegend() {
 
 function toggleLocation() {
   if (locationEnabled) {
-    document.getElementById("togglelocation").style.backgroundImage = "url('images/disable/disabled.png')";
+    document.getElementById("toggleLocation").style.backgroundImage = "url('images/disable/disabled.png')";
     locationEnabled = false;
   } else {
-    document.getElementById("togglelocation").style.backgroundImage = "url('images/disable/enabled.png')";
+    document.getElementById("toggleLocation").style.backgroundImage = "url('images/disable/enabled.png')";
     locationEnabled = true;
   }
 }

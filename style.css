@@ -18,7 +18,7 @@
   background-image: url("images/text/textbackground.png");
   background-repeat: no-repeat;
   width: 1000px;
-  height: 100px;
+  height: 87px;
 
   margin-left: calc(50% - 500px);
   margin-top: 50px;
@@ -52,7 +52,7 @@
   position: absolute;
   left: calc(50% - 640px);
   top: 57px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeLegend {
   width: 154px;
@@ -65,7 +65,7 @@
   position: absolute;
   left: calc(50% + 500px);
   top: 57px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeLegend:hover {
   background-image: url("images/dice/dice_hover.png");
@@ -144,7 +144,7 @@
   position: absolute;
   left: calc(50% - 640px);
   top: 207px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeLocation {
   width: 154px;
@@ -157,7 +157,7 @@
   position: absolute;
   left: calc(50% + 500px);
   top: 207px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeLocation:hover {
   background-image: url("images/dice/dice_hover.png");
@@ -238,7 +238,7 @@
   position: absolute;
   left: calc(50% - 640px);
   top: 357px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeTeam {
   width: 154px;
@@ -251,7 +251,7 @@
   position: absolute;
   left: calc(50% + 500px);
   top: 357px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizeTeam:hover {
   background-image: url("images/dice/dice_hover.png");
@@ -332,7 +332,7 @@
   position: absolute;
   left: calc(50% - 640px);
   top: 507px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizePersonalRule {
   width: 154px;
@@ -345,7 +345,7 @@
   position: absolute;
   left: calc(50% + 500px);
   top: 507px;
-  z-index: 2;
+  z-index: 4;
 }
 #randomizePersonalRule:hover {
   background-image: url("images/dice/dice_hover.png");
