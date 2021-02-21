@@ -1298,8 +1298,13 @@ function generate() {
   }
 
   if (legendRuleEnabled) {
-    let legendRule = eval("randomize" + currentLegend + "()");
-    document.getElementById("legendRule").innerHTML = legendRule;
+    let legendRule;
+    if (Math.random() < 0.7) {
+      legendRule = eval("randomize" + currentLegend + "()");
+    } else {
+      legendRule = "None";
+    }
+      document.getElementById("legendRule").innerHTML = legendRule;
   }
 
   if (specialEnabled) {
