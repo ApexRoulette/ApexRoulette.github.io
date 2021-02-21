@@ -1277,38 +1277,26 @@ function changeSpecial() {
 
 function generate() {
   if (legendEnabled) {
-    let legend = randomizeLegend();
-    document.getElementById("legend").innerHTML = legend;
-    currentLegend = legend;
+    changeLegend();
   }
 
   if (armorEnabled) {
-    let armor = randomizeArmor();
-    document.getElementById("armor").innerHTML = armor;
+    changeArmor();
   }
 
   if (medsEnabled) {
-    let meds = randomizeMeds();
-    document.getElementById("meds").innerHTML = meds;
+    changeMeds();
   }
 
   if (teamEnabled) {
-    let team = randomizeTeam();
-    document.getElementById("team").innerHTML = team;
+    changeTeam();
   }
 
   if (legendRuleEnabled) {
-    let legendRule;
-    if (Math.random() < 0.7) {
-      legendRule = eval("randomize" + currentLegend + "()");
-    } else {
-      legendRule = "None";
-    }
-      document.getElementById("legendRule").innerHTML = legendRule;
+    changeLegendRule();
   }
 
   if (specialEnabled) {
-    let special = randomizeSpecial();
-    document.getElementById("special").innerHTML = special;
+    changeSpecial();
   }
 }
