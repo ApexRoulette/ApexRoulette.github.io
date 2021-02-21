@@ -21,6 +21,9 @@ var wattsonEnabled = true;
 var cryptoEnabled = true;
 var revenantEnabled = true;
 var lobaEnabled = true;
+var rampartEnabled = true;
+var horizonEnabled = true;
+var fuseEnabled = true;
 
 var mapID = 1;
 
@@ -1060,97 +1063,157 @@ function randomizeFuse() {
 
 function randomizeSpecial() {
   let rule;
-  let max = 30;
+  let max = 31;
   switch(Math.floor(Math.random() * max)) {
     case 0:
       rule = "Precision is Key - You may only shoot when ADS";
+      currentPersonalSize = 35;
+      currentPersonalPadding = 28;
       break;
     case 1:
       rule = "Bloodthirsty - You must kill anyone you see downed immediately";
+      currentPersonalSize = 28;
+      currentPersonalPadding = 34;
       break;
     case 2:
-      rule = "Whats reloading - Once your mag is empty you have to drop that gun and find a new one";
+      rule = "Whats reloading - Every time your mag is empty you have to drop the gun and pick it back up";
+      currentPersonalSize = 26;
+      currentPersonalPadding = 20;
       break;
     case 3:
       rule = "Glorious Evolution - You can only use items with rarity below and equal to your evo shield, no evo means no items";
+      currentPersonalSize = 28;
+      currentPersonalPadding = 16;
       break;
     case 4:
       rule = "Man of Quality - You may only use blue and above items";
+      currentPersonalSize = 32;
+      currentPersonalPadding = 30;
       break;
     case 5:
       rule = "Kleptomaniac - You may never drop anything";
+      currentPersonalSize = 40;
+      currentPersonalPadding = 25;
       break;
     case 6:
-      rule = "Light Packing - You may only use 5 backpack slots";
+      rule = "Light Packing - You may only use 7 backpack slots";
+      currentPersonalSize = 35;
+      currentPersonalPadding = 30;
       break;
     case 7:
       rule = "Trigger Happy - Once you start shooting you cannot stop until the mag is empty"
+      currentPersonalSize = 27;
+      currentPersonalPadding = 18;
       break;
     case 8:
-      rule = "Deaf - Mute all ingame sound";
+      rule = "Deaf - Mute all ingame sound. No Subtitles";
+      currentPersonalSize = 40;
+      currentPersonalPadding = 26;
       break;
-      case 9:
+    case 9:
       rule = "Cautious - You may never sprint";
+      currentPersonalSize = 45;
+      currentPersonalPadding = 22;
       break;
     case 10:
       rule = "Bunny Hopper - You may never stop jumping";
+      currentPersonalSize = 40;
+      currentPersonalPadding = 27;
       break;
     case 11:
       rule = "Missing Parts - You may only use guns with all attachments equipped";
-        break;
+      currentPersonalSize = 26;
+      currentPersonalPadding = 35;
+      break;
     case 12:
       rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
+      currentPersonalSize = 27;
+      currentPersonalPadding = 35;
       break;
     case 13:
       rule = "Australian - You have to turn on mouse inversion";
+      currentPersonalSize = 36;
+      currentPersonalPadding = 30;
       break;
     case 14:
       rule = "Skillz - You may only use single fire guns on single fire mode";
+      currentPersonalSize = 30;
+      currentPersonalPadding = 31;
       break;
     case 15:
       rule = "The Past is Behind You - You may only move forward";
+      currentPersonalSize = 34;
+      currentPersonalPadding = 30;
       break;
     case 16:
       rule = "Crab Walk - You may only walk sideways";
+      currentPersonalSize = 40;
+      currentPersonalPadding = 25;
       break;
     case 17:
       rule = "Hyper - You must play on 2x your normal mouse DPI";
+      currentPersonalSize = 34;
+      currentPersonalPadding = 28;
       break;
     case 18:
       rule = "Sluggish - You must play on one half your normal mouse DPI";
+      currentPersonalSize = 30;
+      currentPersonalPadding = 31;
       break;
     case 19:
       rule = "Hyper Eye - Turn ADS Sensitivity to 10";
+      currentPersonalSize = 40;
+      currentPersonalPadding = 27;
       break;
     case 20:
       rule = "Disoriented - Swap your tactical and ultimate keybinds";
+      currentPersonalSize = 32;
+      currentPersonalPadding = 32;
       break;
     case 21:
       rule = "Near-Sighted: You must turn your FOV down to 70";
+      currentPersonalSize = 35;
+      currentPersonalPadding = 30;
       break;
     case 22:
       rule = "Anti-Aidan - You cannot melee";
+      currentPersonalSize = 45;
+      currentPersonalPadding = 23;
       break;
     case 23:
       rule = "Hey It Has A Use - You can only get ammo through crafting";
+      currentPersonalSize = 30;
+      currentPersonalPadding = 33;
       break;
     case 24:
       rule = "Why - You have to use in-game voice chat to talk";
+      currentPersonalSize = 35;
+      currentPersonalPadding = 28;
       break;
     case 25:
       rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
+      currentPersonalSize = 27;
+      currentPersonalPadding = 18;
       break;
     case 26:
       rule = "One Act Play - Mute sound effects";
+      currentPersonalSize = 45;
+      currentPersonalPadding = 25;
       break;
     case 27:
       rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
+      currentPersonalSize = 25;
+      currentPersonalPadding = 20;
       break;
     case 28:
       rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
+      currentPersonalSize = 26;
+      currentPersonalPadding = 19;
       break;
     case 29:
-      rule = "You can't loot deathboxes from anyone on your team, including yourself";
+      rule = "Don't Die - You can't loot deathboxes from anyone on your team, including yourself";
+      currentPersonalSize = 26;
+      currentPersonalPadding = 18;
       break;
     }
 
