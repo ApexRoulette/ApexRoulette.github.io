@@ -262,7 +262,7 @@ function toggleMeds() {
   }
 }
 function showMeds() {
-  document.getElementById("meds").innerHTML = "MEDS";
+  document.getElementById("meds").innerHTML = "WEAPONS";
   document.getElementById("meds").style.color = "yellow";
   document.getElementById("meds").style.fontSize = 64;
   document.getElementById("meds").style.paddingTop = 12;
@@ -275,55 +275,115 @@ function revertMeds() {
 }
 function randomizeMeds() {
   let meds;
-  let max = 16;
+  let max = 36;
   switch(Math.floor(Math.random() * max)) {
     case 0:
-      meds = "Syringes";
+      meds = "Shotguns only";
       break;
     case 1:
-      meds = "Med Kits";
+      meds = "Heavy weapons only";
       break;
     case 2:
-      meds = "Shield Batteries";
+      meds = "Energy weapons only";
       break;
     case 3:
-      meds = "Shield Cells";
+      meds = "Light weapons only";
       break;
     case 4:
-      meds = "Phoenix Kits";
+      meds = "Snipers only";
       break;
     case 5:
-      meds = "Syringes and Shield Cells";
+      meds = "Pistols only";
       break;
     case 6:
-      meds = "Syringes and Med Kits";
+      meds = "Assault Rifles Only";
       break;
     case 7:
-      meds = "Syringes and Shield Batteries";
+      meds = "Submachine guns only";
       break;
     case 8:
-      meds = "Syringes and Phoenix Kits";
+      meds = "Light machine guns only";
       break;
     case 9:
-      meds = "Shield Cells and Med Kits";
+      meds = "Shotguns and heavy weapons only";
       break;
     case 10:
-      meds = "Shield Cells and Shield Batteries";
+      meds = "Shotguns and energy weapons only";
       break;
     case 11:
-      meds = "Shield Cells and Phoenix Kits";
+      meds = "Close range guns only";
       break;
     case 12:
-      meds = "Med Kits and Shield Batteries";
+      meds = "Shotguns and light guns only";
       break;
     case 13:
-      meds = "Med Kits and Phoenix Kits";
+      meds = "Shotguns and snipers only";
       break;
     case 14:
-      meds = "Shield Batteries and Phoenix Kits";
+      meds = "Heavy weapons and light weapons only";
       break;
     case 15:
-      meds = "None";
+      meds = "Heavy weapons and energy weapons only";
+      break;
+    case 16:
+      meds = "All guns allowed";
+      break;
+    case 17:
+      meds = "Heavy weapons and snipers only";
+      break;
+    case 18:
+      meds = "Use the first two weapons you find";
+      break;
+    case 19:
+      meds = "Light weapons and snipers only";
+      break;
+    case 20:
+      meds = "No shotguns or heavy weapons";
+      break;
+    case 21:
+      meds = "No shotguns or energy weapons";
+      break;
+    case 22:
+      meds = "No shotguns or light guns";
+      break;
+    case 23:
+      meds = "Full auto guns only";
+      break;
+    case 24:
+      meds = "Single fire guns only";
+      break;
+    case 25:
+      meds = "No shotguns or snipers";
+      break;
+    case 26:
+      meds = "No heavy weapons or light weapons";
+      break;
+    case 27:
+      meds = "No heavy weapons or energy weapons";
+      break;
+    case 28:
+      meds = "No heavy weapons or snipers";
+      break;
+    case 29:
+      meds = "Snipers, LMGs, and assault rifles only";
+      break;
+    case 30:
+      meds = "No light weapons or energy weapons";
+      break;
+    case 31:
+      meds = "Only weapons that have craftable attachments";
+      break;
+    case 32:
+      meds = "No light weapons or snipers";
+      break;
+    case 33:
+      meds = "No energy weapons or snipers";
+      break;
+    case 34:
+      meds = "R-99, Wingman, Mastiff, Peacekeeper, and Kraber only";
+      break;
+    case 35:
+      meds = "You must take both guns from every enemy you kill";
       break;
   }
 
@@ -356,7 +416,7 @@ function revertTeam() {
   document.getElementById("team").style.paddingTop = 35;
 }
 function randomizeTeam() {
-  let max = 16;
+  let max = 17;
   let rule;
   switch(Math.floor(Math.random() * max)) {
     case 0:
@@ -406,6 +466,9 @@ function randomizeTeam() {
       break;
     case 15:
       rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
+      break;
+    case 16:
+      rule = "Hot Swap - When you revive a teammate, you must switch guns with them";
       break;
   }
 
@@ -1091,7 +1154,7 @@ function revertSpecial() {
   document.getElementById("special").style.paddingTop = 35;
 }
 function randomizeSpecial() {
-  let max = 17;
+  let max = 30;
   let rule;
   switch(Math.floor(Math.random() * max)) {
     case 0:
@@ -1134,7 +1197,7 @@ function randomizeSpecial() {
       rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
       break;
     case 13:
-      rule = "Proper Burial - You must make every deathbox you see disappear";
+      rule = "Australian - You have to turn on mouse inversion";
       break;
     case 14:
       rule = "Skillz - You may only use single fire guns on single fire mode";
@@ -1144,6 +1207,45 @@ function randomizeSpecial() {
       break;
     case 16:
       rule = "Crab Walk - You may only walk sideways";
+      break;
+    case 17:
+      rule = "Hyper - You must play on 2x your normal mouse DPI";
+      break;
+    case 18:
+      rule = "Sluggish - You must play on one half your normal mouse DPI";
+      break;
+    case 19:
+      rule = "Hyper Eye - Turn ADS Sensitivity to 10";
+      break;
+    case 20:
+      rule = "Disoriented - Swap your tactical and ultimate keybinds";
+      break;
+    case 21:
+      rule = "Near-Sighted: You must turn your FOV down to 70";
+      break;
+    case 22:
+      rule = "Anti-Aidan - You cannot melee";
+      break;
+    case 23:
+      rule = "Hey It Has A Use - You can only get ammo through crafting";
+      break;
+    case 24:
+      rule = "Why - You have to use in-game voice chat to talk";
+      break;
+    case 25:
+      rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
+      break;
+    case 26:
+      rule = "One Act Play - Mute sound effects";
+      break;
+    case 27:
+      rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
+      break;
+    case 28:
+      rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
+      break;
+    case 29:
+      rule = "You can't loot deathboxes from anyone on your team, including yourself";
       break;
   }
 
