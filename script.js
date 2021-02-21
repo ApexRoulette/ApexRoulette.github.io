@@ -1,16 +1,18 @@
 var legendEnabled = true;
-var armorEnabled = true;
-var medsEnabled = true;
+var locationEnabled = true;
 var teamEnabled = true;
-var legendRuleEnabled = true;
-var specialEnabled = true;
+var personalRuleEnabled = true;
 
 var currentLegend;
-var currentArmor;
-var currentMeds;
+var currentLocation;
+
 var currentTeam;
-var currentLegendRule;
-var currentSpecial;
+var currentTeamSize;
+var currentTeamPadding;
+
+var currentPersonalRule;
+var currentPersonalSize;
+var currentPersonalPadding;
 
 var causticEnabled = true;
 var mirageEnabled = true;
@@ -40,10 +42,9 @@ function revertLegend() {
   document.getElementById("legend").style.color = "#CCCCCC";
 }
 function randomizeLegend() {
-  var player;
-  var num = Math.floor(Math.random() * 16 + 1);
-
-  switch(num) {
+  let player;
+  let max = 17;
+  switch(Math.floor(Math.random() * max)) {
     case 1:
       player = "Bloodhound";
       break;
@@ -100,302 +101,156 @@ function changeLegend() {
   let player = randomizeLegend();
   currentLegend = player;
   document.getElementById("legend").innerHTML = player;
-  changeLegendRule();
+  changePersonalRule();
 }
 
-function toggleArmor() {
-  if (armorEnabled) {
-    document.getElementById("toggleArmor").style.backgroundImage = "url('images/disable/disabled.png')";
-    armorEnabled = false;
+function toggleLocation() {
+  if (locationEnabled) {
+    document.getElementById("togglelocation").style.backgroundImage = "url('images/disable/disabled.png')";
+    locationEnabled = false;
   } else {
-    document.getElementById("toggleArmor").style.backgroundImage = "url('images/disable/enabled.png')";
-    armorEnabled = true;
+    document.getElementById("togglelocation").style.backgroundImage = "url('images/disable/enabled.png')";
+    locationEnabled = true;
   }
 }
-function showArmor() {
-  document.getElementById("armor").innerHTML = "LOCATION";
-  document.getElementById("armor").style.color = "yellow";
+function showLocation() {
+  document.getElementById("location").innerHTML = "LOCATION";
+  document.getElementById("location").style.color = "yellow";
 }
-function revertArmor() {
-  document.getElementById("armor").innerHTML = currentArmor;
-  document.getElementById("armor").style.color = "#CCCCCC";
+function revertLocation() {
+  document.getElementById("location").innerHTML = currentLocation;
+  document.getElementById("location").style.color = "#CCCCCC";
 
   console.log("reverting");
 }
-function randomizeArmor() {
-  let armor;
+function randomizeLocation() {
+  let location;
   if (mapID == 0) {
     let max = 21;
     switch(Math.floor(Math.random() * max)) {
       case 0:
-        armor = "Crash Site";
+        location = "Crash Site";
         break;
       case 1:
-        armor = "Artillery";
+        location = "Artillery";
         break;
       case 2:
-        armor = "Spotted Lake";
+        location = "Spotted Lake";
         break;
       case 3:
-        armor = "Runoff";
+        location = "Runoff";
         break;
       case 4:
-        armor = "Airbase";
+        location = "Airbase";
         break;
       case 5:
-        armor = "The Pit";
+        location = "The Pit";
         break;
       case 6:
-        armor = "Gauntlet";
+        location = "Gauntlet";
         break;
       case 7:
-        armor = "Mirage Voyage";
+        location = "Mirage Voyage";
         break;
       case 8:
-        armor = "Salvage";
+        location = "Salvage";
         break;
       case 9:
-        armor = "Water Treatment";
+        location = "Water Treatment";
         break;
       case 10:
-        armor = "Market";
+        location = "Market";
         break;
       case 11:
-        armor = "Repulsor";
+        location = "Repulsor";
         break;
       case 12:
-        armor = "Swamps";
+        location = "Swamps";
         break;
       case 13:
-        armor = "Containement";
+        location = "Containement";
         break;
       case 14:
-        armor = "Capacitor";
+        location = "Capacitor";
         break;
       case 15:
-        armor = "Broken Relay";
+        location = "Broken Relay";
         break;
       case 16:
-        armor = "The Rig";
+        location = "The Rig";
         break;
       case 17:
-        armor = "Bunker";
+        location = "Bunker";
         break;
       case 18:
-        armor = "Hydro Dam";
+        location = "Hydro Dam";
         break;
       case 19:
-        armor = "The Cage";
+        location = "The Cage";
         break;
       case 20:
-        armor = "Labs";
+        location = "Labs";
         break;
   }
 } else if (mapID == 1) {
   let max = 16;
   switch(Math.floor(Math.random() * max)) {
     case 0:
-      armor = "Docks";
+      location = "Docks";
       break;
     case 1:
-      armor = "Carrier";
+      location = "Carrier";
       break;
     case 2:
-      armor = "Oasis";
+      location = "Oasis";
       break;
     case 3:
-      armor = "Estates";
+      location = "Estates";
       break;
     case 4:
-      armor = "Elysium";
+      location = "Elysium";
       break;
     case 5:
-      armor = "Hydroponics";
+      location = "Hydroponics";
       break;
     case 6:
-      armor = "Hammond Labs";
+      location = "Hammond Labs";
       break;
     case 7:
-      armor = "Grow Towers";
+      location = "Grow Towers";
       break;
     case 8:
-      armor = "Gardens";
+      location = "Gardens";
       break;
     case 9:
-      armor = "Bonsai Plaza";
+      location = "Bonsai Plaza";
       break;
     case 10:
-      armor = "Power Grid";
+      location = "Power Grid";
       break;
     case 11:
-      armor = "Rift";
+      location = "Rift";
       break;
     case 12:
-      armor = "Orbital Cannon";
+      location = "Orbital Cannon";
       break;
     case 13:
-      armor = "Solar Array";
+      location = "Solar Array";
       break;
     case 14:
-      armor = "Turbine";
+      location = "Turbine";
       break;
     case 15:
-      armor = "Energy Depot";
+      location = "Energy Depot";
       break;
     }
 }
 
-  currentArmor = armor;
-  return armor;
+  currentLocation = location;
+  return location;
 }
-function changeArmor() {
-  document.getElementById("armor").innerHTML = randomizeArmor();
-}
-
-function toggleMeds() {
-  if (medsEnabled) {
-    document.getElementById("toggleMeds").style.backgroundImage = "url('images/disable/disabled.png')";
-    medsEnabled = false;
-  } else {
-    document.getElementById("toggleMeds").style.backgroundImage = "url('images/disable/enabled.png')";
-    medsEnabled = true;
-  }
-}
-function showMeds() {
-  document.getElementById("meds").innerHTML = "WEAPONS";
-  document.getElementById("meds").style.color = "yellow";
-  document.getElementById("meds").style.fontSize = 64;
-  document.getElementById("meds").style.paddingTop = 12;
-}
-function revertMeds() {
-  document.getElementById("meds").innerHTML = currentMeds;
-  document.getElementById("meds").style.color = "#CCCCCC";
-  document.getElementById("meds").style.fontSize = 40;
-  document.getElementById("meds").style.paddingTop = 25;
-}
-function randomizeMeds() {
-  let meds;
-  if (Math.random() < 0.7) {
-    let max = 36;
-    switch(Math.floor(Math.random() * max)) {
-      case 0:
-        meds = "Shotguns only";
-        break;
-      case 1:
-        meds = "Heavy weapons only";
-        break;
-      case 2:
-        meds = "Energy weapons only";
-        break;
-      case 3:
-        meds = "Light weapons only";
-        break;
-      case 4:
-        meds = "Snipers only";
-        break;
-      case 5:
-        meds = "Pistols only";
-        break;
-      case 6:
-        meds = "Assault Rifles Only";
-        break;
-      case 7:
-        meds = "Submachine guns only";
-        break;
-      case 8:
-        meds = "Light machine guns only";
-        break;
-      case 9:
-        meds = "Shotguns and heavy weapons only";
-        break;
-      case 10:
-        meds = "Shotguns and energy weapons only";
-        break;
-      case 11:
-        meds = "Close range guns only";
-        break;
-      case 12:
-        meds = "Shotguns and light guns only";
-        break;
-      case 13:
-        meds = "Shotguns and snipers only";
-        break;
-      case 14:
-        meds = "Heavy weapons and light weapons only";
-        break;
-      case 15:
-        meds = "Heavy weapons and energy weapons only";
-        break;
-      case 16:
-        meds = "All guns allowed";
-        break;
-      case 17:
-        meds = "Heavy weapons and snipers only";
-        break;
-      case 18:
-        meds = "Use the first two weapons you find";
-        break;
-      case 19:
-        meds = "Light weapons and snipers only";
-        break;
-      case 20:
-        meds = "No shotguns or heavy weapons";
-        break;
-      case 21:
-        meds = "No shotguns or energy weapons";
-        break;
-      case 22:
-        meds = "No shotguns or light guns";
-        break;
-      case 23:
-        meds = "Full auto guns only";
-        break;
-      case 24:
-        meds = "Single fire guns only";
-        break;
-      case 25:
-        meds = "No shotguns or snipers";
-        break;
-      case 26:
-        meds = "No heavy weapons or light weapons";
-        break;
-      case 27:
-        meds = "No heavy weapons or energy weapons";
-        break;
-      case 28:
-        meds = "No heavy weapons or snipers";
-        break;
-      case 29:
-        meds = "Snipers, LMGs, and assault rifles only";
-        break;
-      case 30:
-        meds = "No light weapons or energy weapons";
-        break;
-      case 31:
-        meds = "Only weapons that have craftable attachments";
-        break;
-      case 32:
-        meds = "No light weapons or snipers";
-        break;
-      case 33:
-        meds = "No energy weapons or snipers";
-        break;
-      case 34:
-        meds = "R-99, Wingman, Mastiff, Peacekeeper, and Kraber only";
-        break;
-      case 35:
-        meds = "You must take both guns from every enemy you kill";
-        break;
-    }
-  } else {
-    meds = "Any";
-  }
-
-  currentMeds = meds;
-  return meds;
-}
-function changeMeds() {
-  document.getElementById("meds").innerHTML = randomizeMeds();
+function changeLocation() {
+  document.getElementById("location").innerHTML = randomizeLocation();
 }
 
 function toggleTeam() {
@@ -416,107 +271,143 @@ function showTeam() {
 function revertTeam() {
   document.getElementById("team").innerHTML = currentTeam;
   document.getElementById("team").style.color = "#CCCCCC";
-  document.getElementById("team").style.fontSize = 20;
-  document.getElementById("team").style.paddingTop = 35;
+  document.getElementById("team").style.fontSize = currentTeamSize;
+  document.getElementById("team").style.paddingTop = currentTeamPadding;
 }
 function randomizeTeam() {
   let rule;
-  if (Math.random() < 0.7) {
-    let max = 18;
-    switch(Math.floor(Math.random() * max)) {
-      case 0:
-        rule = "Life or Death - No reviving downed players without a Respawn Beacon";
-        break;
-      case 1:
-        rule = "Lone Wolf - Land far away from one another and do not meet up before the first ring closes";
-        break;
-      case 2:
-        rule = "Together, Ape Strong - No splitting up, not even to loot";
-        break;
-      case 3:
-        rule = "Glory For All - Team must charge into all combat without retreat";
-        break;
-      case 4:
-        rule = "Boxing Match - If your team finds a downed enemy, they must all punch them to death";
-        break;
-      case 5:
-        rule = "Looter - You are the only person allowed to loot on your team";
-        break;
-      case 6:
-        rule = "Combo - Whole team must use tacticals or ults at the same time";
-        break;
-      case 7:
-        rule = "Synergy - All players must have one of the same gun";
-        break
-      case 8:
-        rule = "Special Coms - One player talks with pings, one with text, and one with voice chat";
-        break;
-      case 9:
-        rule = "Bias - All teammates must pick one person to protect over their own life";
-        break;
-      case 10:
-        rule = "Medical Experts - Each team member can only pick one type of med";
-        break;
-      case 11:
-        rule = "Teamwork - No one can heal their own shield, only teammates";
-        break;
-      case 12:
-        rule = "Separation Blitz - No two people can have their abilities in use at the same time";
-        break;
-      case 13:
-        rule = "Simon Says - Team members must do anything the other team members tell them";
-        break;
-      case 14:
-        rule = "Hot Swap - You can only use loadouts that one of your other teammates would use";
-        break;
-      case 15:
-        rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
-        break;
-      case 16:
-        rule = "Hot Swap - When you revive a teammate, you must switch guns with them";
-        break;
-      case 17:
-        rule = "Pacifist - You can only fight the final squad";
-        break;
+  let max = 18;
+  switch(Math.floor(Math.random() * max)) {
+    case 0:
+      rule = "Life or Death - No reviving downed players without a Respawn Beacon";
+      currentTeamSize = 25;
+      currentTeamPadding = 35;
+      break;
+    case 1:
+      rule = "Lone Wolf - Land far away from one another and do not meet up before the first ring closes";
+      currentTeamSize = 25;
+      currentTeamPadding = 19;
+      break;
+    case 2:
+      rule = "Together, Ape Strong - No splitting up, not even to loot";
+      currentTeamSize = 32;
+      currentTeamPadding = 30;
+      break;
+    case 3:
+      rule = "Glory For All - Team must charge into all combat without retreat";
+      currentTeamSize = 28;
+      currentTeamPadding = 32;
+      break;
+    case 4:
+      rule = "Boxing Match - If your team finds a downed enemy, they must all punch them to death";
+      currentTeamSize = 25;
+      currentTeamPadding = 19;
+      break;
+    case 5:
+      rule = "Looter - You are the only person allowed to loot on your team";
+      currentTeamSize = 29;
+      currentTeamPadding = 31;
+      break;
+    case 6:
+      rule = "Combo - Whole team must use tacticals or ults at the same time";
+      currentTeamSize = 27;
+      currentTeamPadding = 32;
+      break;
+    case 7:
+      rule = "Synergy - All players must have one of the same gun";
+      currentTeamSize = 34;
+      currentTeamPadding = 29;
+      break
+    case 8:
+      rule = "Special Coms - One player talks with pings, one with text, and one with voice chat";
+      currentTeamSize = 25;
+      currentTeamPadding = 20;
+      break;
+    case 9:
+      rule = "Bias - All teammates must pick one person to protect over their own life";
+      currentTeamSize = 25;
+      currentTeamPadding = 35;
+      break;
+    case 10:
+      rule = "Medical Experts - Each team member can only pick one type of med";
+      currentTeamSize = 27;
+      currentTeamPadding = 34;
+      break;
+    case 11:
+      rule = "Teamwork - No one can heal their own shield, only teammates";
+      currentTeamSize = 29;
+      currentTeamPadding = 32;
+      break;
+    case 12:
+      rule = "Separation Blitz - No two people can have their abilities in use at the same time";
+      currentTeamSize = 25;
+      currentTeamPadding = 20;
+      break;
+    case 13:
+      rule = "Simon Says - Team members must do anything the other team members tell them";
+      currentTeamSize = 25;
+      currentTeamPadding = 20;
+      break;
+    case 14:
+      rule = "Hot Swap - You can only use loadouts that one of your other teammates would use";
+      currentTeamSize = 25;
+      currentTeamPadding = 19;
+      break;
+    case 15:
+      rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
+      currentTeamSize = 25;
+      currentTeamPadding = 20;
+      break;
+    case 16:
+      rule = "Hot Swap - When you revive a teammate, you must switch guns with them";
+      currentTeamSize = 24;
+      currentTeamPadding = 35;
+      break;
+    case 17:
+      rule = "Pacifist - You can only fight the final squad";
+      currentTeamSize = 40;
+      currentTeamPadding = 25;
+      break;
     }
-  } else {
-    rule = "None";
-  }
 
   currentTeam = rule;
   return rule;
 }
 function changeTeam() {
   document.getElementById("team").innerHTML = randomizeTeam();
+  document.getElementById("team").style.fontSize = currentTeamSize;
+  document.getElementById("team").style.paddingTop = currentTeamPadding;
 }
 
-function toggleLegendRule() {
-  if (legendRuleEnabled) {
-    document.getElementById("toggleLegendRule").style.backgroundImage = "url('images/disable/disabled.png')";
-    legendRuleEnabled = false;
+function togglePersonalRule() {
+  if (personalRuleEnabled) {
+    document.getElementById("togglePersonalRule").style.backgroundImage = "url('images/disable/disabled.png')";
+    personalRuleEnabled = false;
   } else {
-    document.getElementById("toggleLegendRule").style.backgroundImage = "url('images/disable/enabled.png')";
-    legendRuleEnabled = true;
+    document.getElementById("togglePersonalRule").style.backgroundImage = "url('images/disable/enabled.png')";
+    personalRuleEnabled = true;
   }
 }
-function showLegendRule() {
-  document.getElementById("legendRule").innerHTML = "LEGEND RULE";
-  document.getElementById("legendRule").style.color = "yellow";
-  document.getElementById("legendRule").style.fontSize = 64;
-  document.getElementById("legendRule").style.paddingTop = 12;
+function showPersonalRule() {
+  document.getElementById("personalRule").innerHTML = "PERSONAL RULE";
+  document.getElementById("personalRule").style.color = "yellow";
+  document.getElementById("personalRule").style.fontSize = 64;
+  document.getElementById("personalRule").style.paddingTop = 12;
 }
-function revertLegendRule() {
-  document.getElementById("legendRule").innerHTML = currentLegendRule;
-  document.getElementById("legendRule").style.color = "#CCCCCC";
-  document.getElementById("legendRule").style.fontSize = 20;
-  document.getElementById("legendRule").style.paddingTop = 35;
+function revertPersonalRule() {
+  document.getElementById("personalRule").innerHTML = currentPersonalRule;
+  document.getElementById("personalRule").style.color = "#CCCCCC";
+  document.getElementById("personalRule").style.fontSize = currentPersonalSize;
+  document.getElementById("personalRule").style.paddingTop = currentPersonalPadding;
 }
-function changeLegendRule() {
-  if (Math.random() < 0.7) {
-    document.getElementById("legendRule").innerHTML = eval("randomize" + currentLegend + "()");
+function changePersonalRule() {
+  if (Math.random() < 0.5) {
+    document.getElementById("personalRule").innerHTML = eval("randomize" + currentLegend + "()");
   } else {
-    document.getElementById("legendRule").innerHTML = "None";
+    document.getElementById("personalRule").innerHTML = randomizeSpecial();
   }
+  document.getElementById("personalRule").style.fontSize = currentPersonalSize;
+  document.getElementById("personalRule").style.paddingTop = currentPersonalPadding;
 }
 
 function randomizeBloodhound() {
@@ -525,37 +416,57 @@ function randomizeBloodhound() {
   switch(Math.floor(Math.random() * max)) {
     case 0:
       rule = "Reconnaissance - You may only shoot someone you have scanned";
+      currentPersonalSize = 28;
+      currentPersonalPadding = 35;
       break;
     case 1:
       rule = "Expert Tracker - If you see tracks you must follow them immediately and use your ultimate";
+      currentPersonalSize = 25;
+      currentPersonalPadding = 20;
       break;
     case 2:
       rule = "Tactically Inefficient - You can only ult when you see footprints, and NOT when you see people";
+      currentPersonalSize = 25;
+      currentPersonalPadding = 20;
       break;
     case 3:
       rule = "Selfish Tracker - You cannot call out any footprints you see";
+      currentPersonalSize = 30;
+      currentPersonalPadding = 32;
       break;
     case 4:
       rule = "Fair Fight - If you are fighting a bloodhound, you can only scan him if he scans you first, and you can only ult if he ults";
+      currentPersonalSize = 25;
+      currentPersonalPadding = 20;
       break;
     case 5:
       rule = "Extreme Analysis - You must always look directly down unless in a fight";
+      currentPersonalSize = 25;
+      currentPersonalPadding = 35;
       break;
     case 6:
       rule = "Strange Habits - You must shoot a single bullet at every footprint you see";
+      currentPersonalSize = 26;
+      currentPersonalPadding = 18;
       break;
     case 7:
       rule = "The Choice - You cannot scan people you have ulted, and you cannot use your ult on people you have scanned";
+      currentPersonalSize = 26;
+      currentPersonalPadding = 18;
       break;
     case 8:
       rule = "Ultimate Regression - You can only move backwards and sideways while in your ult";
+      currentPersonalSize = 27;
+      currentPersonalPadding = 17;
       break;
     case 9:
       rule = "Paranoid - You must ult instantly if you are shot";
+      currentPersonalSize = 37;
+      currentPersonalPadding = 27;
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeGibraltar() {
@@ -594,7 +505,7 @@ function randomizeGibraltar() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeLifeline() {
@@ -633,7 +544,7 @@ function randomizeLifeline() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizePathfinder() {
@@ -672,7 +583,7 @@ function randomizePathfinder() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeWraith() {
@@ -711,7 +622,7 @@ function randomizeWraith() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeBangalore() {
@@ -750,7 +661,7 @@ function randomizeBangalore() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeCaustic() {
@@ -789,7 +700,7 @@ function randomizeCaustic() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeMirage() {
@@ -828,7 +739,7 @@ function randomizeMirage() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeOctane() {
@@ -870,7 +781,7 @@ function randomizeOctane() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeWattson() {
@@ -909,7 +820,7 @@ function randomizeWattson() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeCrypto() {
@@ -948,7 +859,7 @@ function randomizeCrypto() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeRevenant() {
@@ -987,7 +898,7 @@ function randomizeRevenant() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeLoba() {
@@ -1026,7 +937,7 @@ function randomizeLoba() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeRampart() {
@@ -1065,7 +976,7 @@ function randomizeRampart() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeHorizon() {
@@ -1082,7 +993,7 @@ function randomizeHorizon() {
       rule = "Ascension - You must gravity lift all downed players you see";
       break;
     case 3:
-      rule = "Heavy Armor - You can only gravity lift teammates";
+      rule = "Heavy location - You can only gravity lift teammates";
       break;
     case 4:
       rule = "Ineffective - You can only use gravity lift indoors";
@@ -1104,7 +1015,7 @@ function randomizeHorizon() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 function randomizeFuse() {
@@ -1143,136 +1054,108 @@ function randomizeFuse() {
       break;
   }
 
-  currentLegendRule = rule;
+  currentPersonalRule = rule;
   return rule;
 }
 
-function toggleSpecial() {
-  if (specialEnabled) {
-    document.getElementById("toggleSpecial").style.backgroundImage = "url('images/disable/disabled.png')";
-    specialEnabled = false;
-  } else {
-    document.getElementById("toggleSpecial").style.backgroundImage = "url('images/disable/enabled.png')";
-    specialEnabled = true;
-  }
-}
-function showSpecial() {
-  document.getElementById("special").innerHTML = "SPECIAL RULE";
-  document.getElementById("special").style.color = "yellow";
-  document.getElementById("special").style.fontSize = 64;
-  document.getElementById("special").style.paddingTop = 12;
-}
-function revertSpecial() {
-  document.getElementById("special").innerHTML = currentSpecial;
-  document.getElementById("special").style.color = "#CCCCCC";
-  document.getElementById("special").style.fontSize = 20;
-  document.getElementById("special").style.paddingTop = 35;
-}
 function randomizeSpecial() {
   let rule;
-  if (Math.random() < 0.7) {
-    let max = 30;
-    switch(Math.floor(Math.random() * max)) {
-      case 0:
-        rule = "Precision is Key - You may only shoot when ADS";
-        break;
-      case 1:
-        rule = "Bloodthirsty - You must kill anyone you see downed immediately";
-        break;
-      case 2:
-        rule = "Whats reloading - Once your mag is empty you have to drop that gun and find a new one";
-        break;
-      case 3:
-        rule = "Glorious Evolution - You can only use items with rarity below and equal to your evo shield, no evo means no items";
-        break;
-      case 4:
-        rule = "Man of Quality - You may only use blue and above items";
-        break;
-      case 5:
-        rule = "Kleptomaniac - You may never drop anything";
-        break;
-      case 6:
-        rule = "Light Packing - You may only use 5 backpack slots";
-        break;
-      case 7:
-        rule = "Trigger Happy - Once you start shooting you cannot stop until the mag is empty"
-        break;
-      case 8:
-        rule = "Deaf - Mute all ingame sound";
-        break;
+  let max = 30;
+  switch(Math.floor(Math.random() * max)) {
+    case 0:
+      rule = "Precision is Key - You may only shoot when ADS";
+      break;
+    case 1:
+      rule = "Bloodthirsty - You must kill anyone you see downed immediately";
+      break;
+    case 2:
+      rule = "Whats reloading - Once your mag is empty you have to drop that gun and find a new one";
+      break;
+    case 3:
+      rule = "Glorious Evolution - You can only use items with rarity below and equal to your evo shield, no evo means no items";
+      break;
+    case 4:
+      rule = "Man of Quality - You may only use blue and above items";
+      break;
+    case 5:
+      rule = "Kleptomaniac - You may never drop anything";
+      break;
+    case 6:
+      rule = "Light Packing - You may only use 5 backpack slots";
+      break;
+    case 7:
+      rule = "Trigger Happy - Once you start shooting you cannot stop until the mag is empty"
+      break;
+    case 8:
+      rule = "Deaf - Mute all ingame sound";
+      break;
       case 9:
-        rule = "Cautious - You may never sprint";
+      rule = "Cautious - You may never sprint";
+      break;
+    case 10:
+      rule = "Bunny Hopper - You may never stop jumping";
+      break;
+    case 11:
+      rule = "Missing Parts - You may only use guns with all attachments equipped";
         break;
-      case 10:
-        rule = "Bunny Hopper - You may never stop jumping";
-        break;
-      case 11:
-        rule = "Missing Parts - You may only use guns with all attachments equipped";
-        break;
-      case 12:
-        rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
-        break;
-      case 13:
-        rule = "Australian - You have to turn on mouse inversion";
-        break;
-      case 14:
-        rule = "Skillz - You may only use single fire guns on single fire mode";
-        break;
-      case 15:
-        rule = "The Past is Behind You - You may only move forward";
-        break;
-      case 16:
-        rule = "Crab Walk - You may only walk sideways";
-        break;
-      case 17:
-        rule = "Hyper - You must play on 2x your normal mouse DPI";
-        break;
-      case 18:
-        rule = "Sluggish - You must play on one half your normal mouse DPI";
-        break;
-      case 19:
-        rule = "Hyper Eye - Turn ADS Sensitivity to 10";
-        break;
-      case 20:
-        rule = "Disoriented - Swap your tactical and ultimate keybinds";
-        break;
-      case 21:
-        rule = "Near-Sighted: You must turn your FOV down to 70";
-        break;
-      case 22:
-        rule = "Anti-Aidan - You cannot melee";
-        break;
-      case 23:
-        rule = "Hey It Has A Use - You can only get ammo through crafting";
-        break;
-      case 24:
-        rule = "Why - You have to use in-game voice chat to talk";
-        break;
-      case 25:
-        rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
-        break;
-      case 26:
-        rule = "One Act Play - Mute sound effects";
-        break;
-      case 27:
-        rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
-        break;
-      case 28:
-        rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
-        break;
-      case 29:
-        rule = "You can't loot deathboxes from anyone on your team, including yourself";
-        break;
+    case 12:
+      rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
+      break;
+    case 13:
+      rule = "Australian - You have to turn on mouse inversion";
+      break;
+    case 14:
+      rule = "Skillz - You may only use single fire guns on single fire mode";
+      break;
+    case 15:
+      rule = "The Past is Behind You - You may only move forward";
+      break;
+    case 16:
+      rule = "Crab Walk - You may only walk sideways";
+      break;
+    case 17:
+      rule = "Hyper - You must play on 2x your normal mouse DPI";
+      break;
+    case 18:
+      rule = "Sluggish - You must play on one half your normal mouse DPI";
+      break;
+    case 19:
+      rule = "Hyper Eye - Turn ADS Sensitivity to 10";
+      break;
+    case 20:
+      rule = "Disoriented - Swap your tactical and ultimate keybinds";
+      break;
+    case 21:
+      rule = "Near-Sighted: You must turn your FOV down to 70";
+      break;
+    case 22:
+      rule = "Anti-Aidan - You cannot melee";
+      break;
+    case 23:
+      rule = "Hey It Has A Use - You can only get ammo through crafting";
+      break;
+    case 24:
+      rule = "Why - You have to use in-game voice chat to talk";
+      break;
+    case 25:
+      rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
+      break;
+    case 26:
+      rule = "One Act Play - Mute sound effects";
+      break;
+    case 27:
+      rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
+      break;
+    case 28:
+      rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
+      break;
+    case 29:
+      rule = "You can't loot deathboxes from anyone on your team, including yourself";
+      break;
     }
-  } else {
-    rule = "None";
-  }
 
-  currentSpecial = rule;
+  currentPersonalRule = rule;
   return rule;
-}
-function changeSpecial() {
-  document.getElementById("special").innerHTML = randomizeSpecial();
 }
 
 function generate() {
@@ -1280,23 +1163,15 @@ function generate() {
     changeLegend();
   }
 
-  if (armorEnabled) {
-    changeArmor();
-  }
-
-  if (medsEnabled) {
-    changeMeds();
+  if (locationEnabled) {
+    changeLocation();
   }
 
   if (teamEnabled) {
     changeTeam();
   }
 
-  if (legendRuleEnabled) {
-    changeLegendRule();
-  }
-
-  if (specialEnabled) {
-    changeSpecial();
+  if (personalRuleEnabled) {
+    changePersonalRule();
   }
 }
