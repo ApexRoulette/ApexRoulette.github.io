@@ -275,116 +275,120 @@ function revertMeds() {
 }
 function randomizeMeds() {
   let meds;
-  let max = 36;
-  switch(Math.floor(Math.random() * max)) {
-    case 0:
-      meds = "Shotguns only";
-      break;
-    case 1:
-      meds = "Heavy weapons only";
-      break;
-    case 2:
-      meds = "Energy weapons only";
-      break;
-    case 3:
-      meds = "Light weapons only";
-      break;
-    case 4:
-      meds = "Snipers only";
-      break;
-    case 5:
-      meds = "Pistols only";
-      break;
-    case 6:
-      meds = "Assault Rifles Only";
-      break;
-    case 7:
-      meds = "Submachine guns only";
-      break;
-    case 8:
-      meds = "Light machine guns only";
-      break;
-    case 9:
-      meds = "Shotguns and heavy weapons only";
-      break;
-    case 10:
-      meds = "Shotguns and energy weapons only";
-      break;
-    case 11:
-      meds = "Close range guns only";
-      break;
-    case 12:
-      meds = "Shotguns and light guns only";
-      break;
-    case 13:
-      meds = "Shotguns and snipers only";
-      break;
-    case 14:
-      meds = "Heavy weapons and light weapons only";
-      break;
-    case 15:
-      meds = "Heavy weapons and energy weapons only";
-      break;
-    case 16:
-      meds = "All guns allowed";
-      break;
-    case 17:
-      meds = "Heavy weapons and snipers only";
-      break;
-    case 18:
-      meds = "Use the first two weapons you find";
-      break;
-    case 19:
-      meds = "Light weapons and snipers only";
-      break;
-    case 20:
-      meds = "No shotguns or heavy weapons";
-      break;
-    case 21:
-      meds = "No shotguns or energy weapons";
-      break;
-    case 22:
-      meds = "No shotguns or light guns";
-      break;
-    case 23:
-      meds = "Full auto guns only";
-      break;
-    case 24:
-      meds = "Single fire guns only";
-      break;
-    case 25:
-      meds = "No shotguns or snipers";
-      break;
-    case 26:
-      meds = "No heavy weapons or light weapons";
-      break;
-    case 27:
-      meds = "No heavy weapons or energy weapons";
-      break;
-    case 28:
-      meds = "No heavy weapons or snipers";
-      break;
-    case 29:
-      meds = "Snipers, LMGs, and assault rifles only";
-      break;
-    case 30:
-      meds = "No light weapons or energy weapons";
-      break;
-    case 31:
-      meds = "Only weapons that have craftable attachments";
-      break;
-    case 32:
-      meds = "No light weapons or snipers";
-      break;
-    case 33:
-      meds = "No energy weapons or snipers";
-      break;
-    case 34:
-      meds = "R-99, Wingman, Mastiff, Peacekeeper, and Kraber only";
-      break;
-    case 35:
-      meds = "You must take both guns from every enemy you kill";
-      break;
+  if (Math.random() < 0.7) {
+    let max = 36;
+    switch(Math.floor(Math.random() * max)) {
+      case 0:
+        meds = "Shotguns only";
+        break;
+      case 1:
+        meds = "Heavy weapons only";
+        break;
+      case 2:
+        meds = "Energy weapons only";
+        break;
+      case 3:
+        meds = "Light weapons only";
+        break;
+      case 4:
+        meds = "Snipers only";
+        break;
+      case 5:
+        meds = "Pistols only";
+        break;
+      case 6:
+        meds = "Assault Rifles Only";
+        break;
+      case 7:
+        meds = "Submachine guns only";
+        break;
+      case 8:
+        meds = "Light machine guns only";
+        break;
+      case 9:
+        meds = "Shotguns and heavy weapons only";
+        break;
+      case 10:
+        meds = "Shotguns and energy weapons only";
+        break;
+      case 11:
+        meds = "Close range guns only";
+        break;
+      case 12:
+        meds = "Shotguns and light guns only";
+        break;
+      case 13:
+        meds = "Shotguns and snipers only";
+        break;
+      case 14:
+        meds = "Heavy weapons and light weapons only";
+        break;
+      case 15:
+        meds = "Heavy weapons and energy weapons only";
+        break;
+      case 16:
+        meds = "All guns allowed";
+        break;
+      case 17:
+        meds = "Heavy weapons and snipers only";
+        break;
+      case 18:
+        meds = "Use the first two weapons you find";
+        break;
+      case 19:
+        meds = "Light weapons and snipers only";
+        break;
+      case 20:
+        meds = "No shotguns or heavy weapons";
+        break;
+      case 21:
+        meds = "No shotguns or energy weapons";
+        break;
+      case 22:
+        meds = "No shotguns or light guns";
+        break;
+      case 23:
+        meds = "Full auto guns only";
+        break;
+      case 24:
+        meds = "Single fire guns only";
+        break;
+      case 25:
+        meds = "No shotguns or snipers";
+        break;
+      case 26:
+        meds = "No heavy weapons or light weapons";
+        break;
+      case 27:
+        meds = "No heavy weapons or energy weapons";
+        break;
+      case 28:
+        meds = "No heavy weapons or snipers";
+        break;
+      case 29:
+        meds = "Snipers, LMGs, and assault rifles only";
+        break;
+      case 30:
+        meds = "No light weapons or energy weapons";
+        break;
+      case 31:
+        meds = "Only weapons that have craftable attachments";
+        break;
+      case 32:
+        meds = "No light weapons or snipers";
+        break;
+      case 33:
+        meds = "No energy weapons or snipers";
+        break;
+      case 34:
+        meds = "R-99, Wingman, Mastiff, Peacekeeper, and Kraber only";
+        break;
+      case 35:
+        meds = "You must take both guns from every enemy you kill";
+        break;
+    }
+  } else {
+    meds = "Any";
   }
 
   currentMeds = meds;
@@ -416,60 +420,67 @@ function revertTeam() {
   document.getElementById("team").style.paddingTop = 35;
 }
 function randomizeTeam() {
-  let max = 17;
   let rule;
-  switch(Math.floor(Math.random() * max)) {
-    case 0:
-      rule = "Life or Death - No reviving downed players without a Respawn Beacon";
-      break;
-    case 1:
-      rule = "Lone Wolf - Land far away from one another and do not meet up before the first ring closes";
-      break;
-    case 2:
-      rule = "Together, Ape Strong - No splitting up, not even to loot";
-      break;
-    case 3:
-      rule = "Glory For All - Team must charge into all combat without retreat";
-      break;
-    case 4:
-      rule = "Boxing Match - If your team finds a downed enemy, they must all punch them to death";
-      break;
-    case 5:
-      rule = "Looter - You are the only person allowed to loot on your team";
-      break;
-    case 6:
-      rule = "Combo - Whole team must use tacticals or ults at the same time";
-      break;
-    case 7:
-      rule = "Synergy - All players must have one of the same gun";
-      break
-    case 8:
-      rule = "Special Coms - One player talks with pings, one with text, and one with voice chat";
-      break;
-    case 9:
-      rule = "Bias - All teammates must pick one person to protect over their own life";
-      break;
-    case 10:
-      rule = "Medical Experts - Each team member can only pick one type of med";
-      break;
-    case 11:
-      rule = "Teamwork - No one can heal their own shield, only teammates";
-      break;
-    case 12:
-      rule = "Separation Blitz - No two people can have their abilities in use at the same time";
-      break;
-    case 13:
-      rule = "Simon Says - Team members must do anything the other team members tell them";
-      break;
-    case 14:
-      rule = "Hot Swap - You can only use loadouts that one of your other teammates would use";
-      break;
-    case 15:
-      rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
-      break;
-    case 16:
-      rule = "Hot Swap - When you revive a teammate, you must switch guns with them";
-      break;
+  if (Math.random() < 0.7) {
+    let max = 18;
+    switch(Math.floor(Math.random() * max)) {
+      case 0:
+        rule = "Life or Death - No reviving downed players without a Respawn Beacon";
+        break;
+      case 1:
+        rule = "Lone Wolf - Land far away from one another and do not meet up before the first ring closes";
+        break;
+      case 2:
+        rule = "Together, Ape Strong - No splitting up, not even to loot";
+        break;
+      case 3:
+        rule = "Glory For All - Team must charge into all combat without retreat";
+        break;
+      case 4:
+        rule = "Boxing Match - If your team finds a downed enemy, they must all punch them to death";
+        break;
+      case 5:
+        rule = "Looter - You are the only person allowed to loot on your team";
+        break;
+      case 6:
+        rule = "Combo - Whole team must use tacticals or ults at the same time";
+        break;
+      case 7:
+        rule = "Synergy - All players must have one of the same gun";
+        break
+      case 8:
+        rule = "Special Coms - One player talks with pings, one with text, and one with voice chat";
+        break;
+      case 9:
+        rule = "Bias - All teammates must pick one person to protect over their own life";
+        break;
+      case 10:
+        rule = "Medical Experts - Each team member can only pick one type of med";
+        break;
+      case 11:
+        rule = "Teamwork - No one can heal their own shield, only teammates";
+        break;
+      case 12:
+        rule = "Separation Blitz - No two people can have their abilities in use at the same time";
+        break;
+      case 13:
+        rule = "Simon Says - Team members must do anything the other team members tell them";
+        break;
+      case 14:
+        rule = "Hot Swap - You can only use loadouts that one of your other teammates would use";
+        break;
+      case 15:
+        rule = "Ammo Experts - Team members cannot use the same ammo types as each other";
+        break;
+      case 16:
+        rule = "Hot Swap - When you revive a teammate, you must switch guns with them";
+        break;
+      case 17:
+        rule = "Pacifist - You can only fight the final squad";
+        break;
+    }
+  } else {
+    rule = "None";
   }
 
   currentTeam = rule;
@@ -501,7 +512,11 @@ function revertLegendRule() {
   document.getElementById("legendRule").style.paddingTop = 35;
 }
 function changeLegendRule() {
-  document.getElementById("legendRule").innerHTML = eval("randomize" + currentLegend + "()");
+  if (Math.random() < 0.7) {
+    document.getElementById("legendRule").innerHTML = eval("randomize" + currentLegend + "()");
+  } else {
+    document.getElementById("legendRule").innerHTML = "None";
+  }
 }
 
 function randomizeBloodhound() {
@@ -1154,99 +1169,103 @@ function revertSpecial() {
   document.getElementById("special").style.paddingTop = 35;
 }
 function randomizeSpecial() {
-  let max = 30;
   let rule;
-  switch(Math.floor(Math.random() * max)) {
-    case 0:
-      rule = "Precision is Key - You may only shoot when ADS";
-      break;
-    case 1:
-      rule = "Bloodthirsty - You must kill anyone you see downed immediately";
-      break;
-    case 2:
-      rule = "Whats reloading - Once your mag is empty you have to drop that gun and find a new one";
-      break;
-    case 3:
-      rule = "Glorious Evolution - You can only use items with rarity below and equal to your evo shield, no evo means no items";
-      break;
-    case 4:
-      rule = "Man of Quality - You may only use blue and above items";
-      break;
-    case 5:
-      rule = "Kleptomaniac - You may never drop anything";
-      break;
-    case 6:
-      rule = "Light Packing - You may only use 5 backpack slots";
-      break;
-    case 7:
-      rule = "Trigger Happy - Once you start shooting you cannot stop until the mag is empty"
-      break;
-    case 8:
-      rule = "Deaf - Mute all ingame sound";
-      break;
-    case 9:
-      rule = "Cautious - You may never sprint";
-      break;
-    case 10:
-      rule = "Bunny Hopper - You may never stop jumping";
-      break;
-    case 11:
-      rule = "Missing Parts - You may only use guns with all attachments equipped";
-      break;
-    case 12:
-      rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
-      break;
-    case 13:
-      rule = "Australian - You have to turn on mouse inversion";
-      break;
-    case 14:
-      rule = "Skillz - You may only use single fire guns on single fire mode";
-      break;
-    case 15:
-      rule = "The Past is Behind You - You may only move forward";
-      break;
-    case 16:
-      rule = "Crab Walk - You may only walk sideways";
-      break;
-    case 17:
-      rule = "Hyper - You must play on 2x your normal mouse DPI";
-      break;
-    case 18:
-      rule = "Sluggish - You must play on one half your normal mouse DPI";
-      break;
-    case 19:
-      rule = "Hyper Eye - Turn ADS Sensitivity to 10";
-      break;
-    case 20:
-      rule = "Disoriented - Swap your tactical and ultimate keybinds";
-      break;
-    case 21:
-      rule = "Near-Sighted: You must turn your FOV down to 70";
-      break;
-    case 22:
-      rule = "Anti-Aidan - You cannot melee";
-      break;
-    case 23:
-      rule = "Hey It Has A Use - You can only get ammo through crafting";
-      break;
-    case 24:
-      rule = "Why - You have to use in-game voice chat to talk";
-      break;
-    case 25:
-      rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
-      break;
-    case 26:
-      rule = "One Act Play - Mute sound effects";
-      break;
-    case 27:
-      rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
-      break;
-    case 28:
-      rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
-      break;
-    case 29:
-      rule = "You can't loot deathboxes from anyone on your team, including yourself";
-      break;
+  if (Math.random() < 0.7) {
+    let max = 30;
+    switch(Math.floor(Math.random() * max)) {
+      case 0:
+        rule = "Precision is Key - You may only shoot when ADS";
+        break;
+      case 1:
+        rule = "Bloodthirsty - You must kill anyone you see downed immediately";
+        break;
+      case 2:
+        rule = "Whats reloading - Once your mag is empty you have to drop that gun and find a new one";
+        break;
+      case 3:
+        rule = "Glorious Evolution - You can only use items with rarity below and equal to your evo shield, no evo means no items";
+        break;
+      case 4:
+        rule = "Man of Quality - You may only use blue and above items";
+        break;
+      case 5:
+        rule = "Kleptomaniac - You may never drop anything";
+        break;
+      case 6:
+        rule = "Light Packing - You may only use 5 backpack slots";
+        break;
+      case 7:
+        rule = "Trigger Happy - Once you start shooting you cannot stop until the mag is empty"
+        break;
+      case 8:
+        rule = "Deaf - Mute all ingame sound";
+        break;
+      case 9:
+        rule = "Cautious - You may never sprint";
+        break;
+      case 10:
+        rule = "Bunny Hopper - You may never stop jumping";
+        break;
+      case 11:
+        rule = "Missing Parts - You may only use guns with all attachments equipped";
+        break;
+      case 12:
+        rule = "Claustrophobic - You are not allowed indoors unless forced by ring";
+        break;
+      case 13:
+        rule = "Australian - You have to turn on mouse inversion";
+        break;
+      case 14:
+        rule = "Skillz - You may only use single fire guns on single fire mode";
+        break;
+      case 15:
+        rule = "The Past is Behind You - You may only move forward";
+        break;
+      case 16:
+        rule = "Crab Walk - You may only walk sideways";
+        break;
+      case 17:
+        rule = "Hyper - You must play on 2x your normal mouse DPI";
+        break;
+      case 18:
+        rule = "Sluggish - You must play on one half your normal mouse DPI";
+        break;
+      case 19:
+        rule = "Hyper Eye - Turn ADS Sensitivity to 10";
+        break;
+      case 20:
+        rule = "Disoriented - Swap your tactical and ultimate keybinds";
+        break;
+      case 21:
+        rule = "Near-Sighted: You must turn your FOV down to 70";
+        break;
+      case 22:
+        rule = "Anti-Aidan - You cannot melee";
+        break;
+      case 23:
+        rule = "Hey It Has A Use - You can only get ammo through crafting";
+        break;
+      case 24:
+        rule = "Why - You have to use in-game voice chat to talk";
+        break;
+      case 25:
+        rule = "Silent Synergy - All players must deafen when they get in a fight until it is over";
+        break;
+      case 26:
+        rule = "One Act Play - Mute sound effects";
+        break;
+      case 27:
+        rule = "The Ol' Switcharoo - Only use one of your guns, and swap each time you get a kill";
+        break;
+      case 28:
+        rule = "The Other Ol' Switcharoo - Only use one of your guns, and swap each time your shield breaks";
+        break;
+      case 29:
+        rule = "You can't loot deathboxes from anyone on your team, including yourself";
+        break;
+    }
+  } else {
+    rule = "None";
   }
 
   currentSpecial = rule;
