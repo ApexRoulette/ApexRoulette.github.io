@@ -14,6 +14,12 @@ var currentPersonalRule;
 var currentPersonalSize;
 var currentPersonalPadding;
 
+var bloodhoundEnabled = true;
+var gibraltarEnabled = true;
+var lifelineEnabled = true;
+var pathfinderEnabled = true;
+var wraithEnabled = true;
+var bangaloreEnabled = true;
 var causticEnabled = true;
 var mirageEnabled = true;
 var octaneEnabled = true;
@@ -46,65 +52,65 @@ function revertLegend() {
 }
 function randomizeLegend() {
   let player;
-  let max = 17;
+  let max = 16;
   switch(Math.floor(Math.random() * max)) {
-    case 1:
+    case 0:
       player = "Bloodhound";
       break;
-    case 2:
+    case 1:
       player = "Gibraltar";
       break;
-    case 3:
+    case 2:
       player = "Lifeline";
       break;
-    case 4:
+    case 3:
       player = "Pathfinder";
       break;
-    case 5:
+    case 4:
       player = "Wraith";
       break;
-    case 6:
+    case 5:
       player = "Bangalore";
       break;
-    case 7:
+    case 6:
       player = "Caustic";
       break;
-    case 8:
+    case 7:
       player = "Mirage";
       break;
-    case 9:
+    case 8:
       player = "Octane";
       break;
-    case 10:
+    case 9:
       player = "Wattson";
       break;
-    case 11:
+    case 10:
       player = "Crypto";
       break;
-    case 12:
+    case 11:
       player = "Revenant";
       break;
-    case 13:
+    case 12:
       player = "Loba";
       break;
-    case 14:
+    case 13:
       player = "Rampart";
       break;
-    case 15:
+    case 14:
       player = "Horizon";
       break;
-    case 16:
+    case 15:
       player = "Fuse";
       break;
   }
-
+  currentLegend = player;
   return player;
 }
 function changeLegend() {
-  let player = randomizeLegend();
-  currentLegend = player;
-  document.getElementById("legend").innerHTML = player;
-  changePersonalRule();
+  if (legendEnabled) {
+    document.getElementById("legend").innerHTML = randomizeLegend();
+    changePersonalRule();
+  }
 }
 
 function toggleLocation() {
@@ -194,66 +200,68 @@ function randomizeLocation() {
       case 20:
         location = "Labs";
         break;
-  }
-} else if (mapID == 1) {
-  let max = 16;
-  switch(Math.floor(Math.random() * max)) {
-    case 0:
-      location = "Docks";
-      break;
-    case 1:
-      location = "Carrier";
-      break;
-    case 2:
-      location = "Oasis";
-      break;
-    case 3:
-      location = "Estates";
-      break;
-    case 4:
-      location = "Elysium";
-      break;
-    case 5:
-      location = "Hydroponics";
-      break;
-    case 6:
-      location = "Hammond Labs";
-      break;
-    case 7:
-      location = "Grow Towers";
-      break;
-    case 8:
-      location = "Gardens";
-      break;
-    case 9:
-      location = "Bonsai Plaza";
-      break;
-    case 10:
-      location = "Power Grid";
-      break;
-    case 11:
-      location = "Rift";
-      break;
-    case 12:
-      location = "Orbital Cannon";
-      break;
-    case 13:
-      location = "Solar Array";
-      break;
-    case 14:
-      location = "Turbine";
-      break;
-    case 15:
-      location = "Energy Depot";
-      break;
     }
-}
+  } else if (mapID == 1) {
+    let max = 16;
+    switch(Math.floor(Math.random() * max)) {
+      case 0:
+        location = "Docks";
+        break;
+      case 1:
+        location = "Carrier";
+        break;
+      case 2:
+        location = "Oasis";
+        break;
+      case 3:
+        location = "Estates";
+        break;
+      case 4:
+        location = "Elysium";
+        break;
+      case 5:
+        location = "Hydroponics";
+        break;
+      case 6:
+        location = "Hammond Labs";
+        break;
+      case 7:
+        location = "Grow Towers";
+        break;
+      case 8:
+        location = "Gardens";
+        break;
+      case 9:
+        location = "Bonsai Plaza";
+        break;
+      case 10:
+        location = "Power Grid";
+        break;
+      case 11:
+        location = "Rift";
+        break;
+      case 12:
+        location = "Orbital Cannon";
+        break;
+      case 13:
+        location = "Solar Array";
+        break;
+      case 14:
+        location = "Turbine";
+        break;
+      case 15:
+        location = "Energy Depot";
+        break;
+    }
+  }
 
   currentLocation = location;
   return location;
 }
 function changeLocation() {
-  document.getElementById("location").innerHTML = randomizeLocation();
+  if (locationEnabled) {
+    document.getElementById("location").innerHTML = randomizeLocation();
+  }
 }
 
 function toggleTeam() {
@@ -377,9 +385,11 @@ function randomizeTeam() {
   return rule;
 }
 function changeTeam() {
-  document.getElementById("team").innerHTML = randomizeTeam();
-  document.getElementById("team").style.fontSize = currentTeamSize;
-  document.getElementById("team").style.paddingTop = currentTeamPadding;
+  if (teamEnabled) {
+    document.getElementById("team").innerHTML = randomizeTeam();
+    document.getElementById("team").style.fontSize = currentTeamSize;
+    document.getElementById("team").style.paddingTop = currentTeamPadding;
+  }
 }
 
 function togglePersonalRule() {
@@ -404,13 +414,15 @@ function revertPersonalRule() {
   document.getElementById("personalRule").style.paddingTop = currentPersonalPadding;
 }
 function changePersonalRule() {
-  if (Math.random() < 0.5) {
-    document.getElementById("personalRule").innerHTML = eval("randomize" + currentLegend + "()");
-  } else {
-    document.getElementById("personalRule").innerHTML = randomizeSpecial();
+  if (personalRuleEnabled) {
+    if (Math.random() < 0.5) {
+      document.getElementById("personalRule").innerHTML = eval("randomize" + currentLegend + "()");
+    } else {
+      document.getElementById("personalRule").innerHTML = randomizeSpecial();
+    }
+    document.getElementById("personalRule").style.fontSize = currentPersonalSize;
+    document.getElementById("personalRule").style.paddingTop = currentPersonalPadding;
   }
-  document.getElementById("personalRule").style.fontSize = currentPersonalSize;
-  document.getElementById("personalRule").style.paddingTop = currentPersonalPadding;
 }
 
 function randomizeBloodhound() {
@@ -1220,7 +1232,6 @@ function randomizeSpecial() {
   currentPersonalRule = rule;
   return rule;
 }
-
 function generate() {
   if (legendEnabled) {
     changeLegend();
