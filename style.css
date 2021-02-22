@@ -6,6 +6,21 @@
   margin-top: -10px;
   margin-left: -10px;
 }
+#banner {
+  font-size: 64px;
+  position: absolute;
+  z-index: 5;
+  font-family: Aldrich;
+  color: white;
+  background-color: red;
+  margin-top: -10px;
+  width: 100%;
+  text-align: center;
+  margin-left: -8px;
+  padding-top: 5px;
+  height: 75px;
+  box-shadow: 0px 5px 25px black;
+}
 
 #legend {
   z-index: 3;
@@ -21,7 +36,7 @@
   height: 87px;
 
   margin-left: calc(50% - 500px);
-  margin-top: 50px;
+  margin-top: 200px;
   position: absolute;
 }
 #legendShadow {
@@ -38,7 +53,7 @@
   height: 300px;
 
   margin-left: calc(50% - 600px);
-  margin-top: -50px;
+  margin-top: 100px;
   position: absolute;
 }
 #toggleLegend {
@@ -51,7 +66,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 640px);
-  top: 57px;
+  top: 207px;
   z-index: 4;
 }
 #randomizeLegend {
@@ -64,7 +79,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 500px);
-  top: 57px;
+  top: 207px;
   z-index: 4;
 }
 #randomizeLegend:hover {
@@ -83,7 +98,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 485px);
-  top: 17px;
+  top: 167px;
   z-index: 2;
 }
 #legendToggleShadow {
@@ -96,7 +111,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 655px);
-  top: 17px;
+  top: 167px;
   z-index: 2;
 }
 
@@ -113,7 +128,7 @@
   width: 1000px;
   height: 100px;
   margin-left: calc(50% - 500px);
-  margin-top: 200px;
+  margin-top: 350px;
   position: absolute;
 }
 #locationShadow {
@@ -130,7 +145,7 @@
   height: 300px;
 
   margin-left: calc(50% - 600px);
-  margin-top: 100px;
+  margin-top: 250px;
   position: absolute;
 }
 #toggleLocation {
@@ -143,7 +158,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 640px);
-  top: 207px;
+  top: 357px;
   z-index: 4;
 }
 #randomizeLocation {
@@ -156,7 +171,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 500px);
-  top: 207px;
+  top: 357px;
   z-index: 4;
 }
 #randomizeLocation:hover {
@@ -175,7 +190,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 485px);
-  top: 167px;
+  top: 317px;
   z-index: 2;
 }
 #locationToggleShadow {
@@ -188,7 +203,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 655px);
-  top: 167px;
+  top: 317px;
   z-index: 2;
 }
 
@@ -207,7 +222,7 @@
   width: 950px;
   height: 87px;
   margin-left: calc(50% - 500px);
-  margin-top: 350px;
+  margin-top: 500px;
   position: absolute;
 }
 #teamShadow {
@@ -224,7 +239,7 @@
   height: 300px;
 
   margin-left: calc(50% - 600px);
-  margin-top: 250px;
+  margin-top: 400px;
   position: absolute;
 }
 #toggleTeam {
@@ -237,7 +252,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 640px);
-  top: 357px;
+  top: 507px;
   z-index: 4;
 }
 #randomizeTeam {
@@ -250,7 +265,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 500px);
-  top: 357px;
+  top: 507px;
   z-index: 4;
 }
 #randomizeTeam:hover {
@@ -269,7 +284,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 485px);
-  top: 317px;
+  top: 467px;
   z-index: 2;
 }
 #teamToggleShadow {
@@ -282,7 +297,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 655px);
-  top: 317px;
+  top: 467px;
   z-index: 2;
 }
 
@@ -301,7 +316,7 @@
   width: 950px;
   height: 87px;
   margin-left: calc(50% - 500px);
-  margin-top: 500px;
+  margin-top: 647px;
   position: absolute;
 }
 #personalRuleShadow {
@@ -318,7 +333,7 @@
   height: 300px;
 
   margin-left: calc(50% - 600px);
-  margin-top: 400px;
+  margin-top: 547px;
   position: absolute;
 }
 #togglePersonalRule {
@@ -331,7 +346,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 640px);
-  top: 507px;
+  top: 654px;
   z-index: 4;
 }
 #randomizePersonalRule {
@@ -344,7 +359,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 500px);
-  top: 507px;
+  top: 654px;
   z-index: 4;
 }
 #randomizePersonalRule:hover {
@@ -363,7 +378,7 @@
   outline: none;
   position: absolute;
   left: calc(50% + 485px);
-  top: 467px;
+  top: 614px;
   z-index: 2;
 }
 #personalRuleToggleShadow {
@@ -376,7 +391,7 @@
   outline: none;
   position: absolute;
   left: calc(50% - 655px);
-  top: 467px;
+  top: 614px;
   z-index: 2;
 }
 
@@ -394,7 +409,7 @@
   outline: none;
   position: absolute;
   margin-left: calc(50% - 125px);
-  margin-top: 670px;
+  margin-top: 817px;
   z-index: 3;
 }
 #generate:hover {
@@ -413,6 +428,6 @@
   outline: none;
   position: absolute;
   margin-left: calc(50% - 148px);
-  margin-top: 652px;
+  margin-top: 799px;
   z-index: 2;
 }
